@@ -2,6 +2,6 @@
 #script takes the necessary classes comiles them and makes a proper .jar
 
 javac *.java
-jar cfm primzahlen.jar Manifest *.classes
+jar cfm primzahlen.jar Manifest *.class
 echo 'Fertig!'
 echo 'Zum Ausführen: java -jar primzahlen.jar'
