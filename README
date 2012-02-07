@@ -1,1 +1,4 @@
 Collaborative work of members of the 10b.
+
+Build:
+sh ./build.sh
