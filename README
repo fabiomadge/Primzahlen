@@ -1,7 +1,7 @@
 Collaborative work of members of the 10b.
 
 Build:
-clone the repository: ```git clone git://github.com/fabiomadge/Primzahlen.git```
+clone the repository: git clone git://github.com/fabiomadge/Primzahlen.git
 cd into 'Primzahlen': cd Primzahlen
 build the .jar      : sh build.sh
 
