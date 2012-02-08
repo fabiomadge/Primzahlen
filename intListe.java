@@ -1,6 +1,6 @@
-public class intReihe
+public class intListe
 {
-    public intReihe()
+    public intListe()
     {
     }
 }
