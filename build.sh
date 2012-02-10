@@ -6,4 +6,4 @@ javac *.java
 echo 'building .jar file...'
 jar cfm primzahlen.jar Manifest *.class
 echo 'Fertig!'
-echo 'Zum Ausführen: java -jar primzahlen.jar'
+echo 'Zum Ausführen: java -jar primzahlen.jar [Obere Grenze]'
