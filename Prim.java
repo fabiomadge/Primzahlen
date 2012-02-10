@@ -1,19 +1,19 @@
 public class Prim
 {
-    public static void main(String[] s) throws Exception{
+	public static void main(String[] s) throws Exception{
     	int g = 0;
     	try{
     		g = new Integer(Integer.parseInt(s[0]));
     	}
     	catch(java.lang.ArrayIndexOutOfBoundsException e){
-   			System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
+    		System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
     		System.out.print("Aber zuerst brauchen wir eine oberer Grenze: ");
-            g = ein();
+    		g = ein();
     	}
         catch(java.lang.NumberFormatException e){
-            System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
-            System.out.print("Bitte geben sie eine Zahl >0 ein: ");
-            g = ein();
+        	System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
+        	System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+        	g = ein();
         }
     	while(g < 0){
     		System.out.println("Die eingegebene Nummer ist leider nicht gültig.");
@@ -24,20 +24,20 @@ public class Prim
 
     }
 
-    public Prim(int i){
+	public Prim(int i){
     	System.out.println(dek(i));
     }
 
 //handeld schlechten input
 
-    public static int ein()throws Exception{
+	public static int ein()throws Exception{
         try{
-            return EA.einInt();
+        	return EA.einInt();
         }
         catch(java.lang.NumberFormatException e){
-            System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
-            System.out.print("Bitte geben sie eine Zahl >0 ein: ");
-            return ein();
+        	System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
+        	System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+        	return ein();
         }
     }    
 
