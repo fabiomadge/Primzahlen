@@ -1,4 +1,4 @@
-public class prim
+public class Prim
 {
     public static void main(String[] s) throws Exception{
     	int g = 0;
@@ -15,11 +15,11 @@ public class prim
     		System.out.print("Bitte geben sie eine Zahl >0 ein: ");
     		g = EA.einInt();
     	}
-    	new prim(g);
+    	new Prim(g);
 
     }
 
-    public prim(int i){
+    public Prim(int i){
     	System.out.println(i);
     }
 
