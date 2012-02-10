@@ -25,7 +25,7 @@ public class Prim
     }
 
     public Prim(int i){
-    	System.out.println(i);
+    	System.out.println(dek(i));
     }
 
 //handeld schlechten input
