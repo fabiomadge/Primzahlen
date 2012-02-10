@@ -1,12 +1,26 @@
 public class prim
 {
-    public static void main(String[] s) throws Exception
-    {
-    	System.out.println("There will be code");
-    	//int a = EA.einInt();
-    	//int b = EA.einInt();
-    	//System.out.println(dek(a));
+    public static void main(String[] s) throws Exception{
+    	int g = 0;
+    	try{
+    		g = new Integer(Integer.parseInt(s[0]));
+    	}
+    	catch(java.lang.ArrayIndexOutOfBoundsException e){
+   			System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
+    		System.out.print("Aber zuerst brauchen wir eine oberer Grenze: ");
+    		g = EA.einInt();
+    	}
+    	while(g < 0){
+    		System.out.println("Die eingegebene Nummer ist leider nicht gültig.");
+    		System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+    		g = EA.einInt();
+    	}
+    	new prim(g);
 
+    }
+
+    public prim(int i){
+    	System.out.println(i);
     }
 
 //dekrementiert die übergebene Ganzzahl. 
