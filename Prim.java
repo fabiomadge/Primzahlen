@@ -8,12 +8,17 @@ public class Prim
     	catch(java.lang.ArrayIndexOutOfBoundsException e){
    			System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
     		System.out.print("Aber zuerst brauchen wir eine oberer Grenze: ");
-    		g = EA.einInt();
+            g = ein();
     	}
+        catch(java.lang.NumberFormatException e){
+            System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
+            System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+            g = ein();
+        }
     	while(g < 0){
     		System.out.println("Die eingegebene Nummer ist leider nicht gültig.");
     		System.out.print("Bitte geben sie eine Zahl >0 ein: ");
-    		g = EA.einInt();
+    		g = ein();
     	}
     	new Prim(g);
 
@@ -22,6 +27,19 @@ public class Prim
     public Prim(int i){
     	System.out.println(i);
     }
+
+//handeld schlechten input
+
+    public static int ein()throws Exception{
+        try{
+            return EA.einInt();
+        }
+        catch(java.lang.NumberFormatException e){
+            System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
+            System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+            return ein();
+        }
+    }    
 
 //dekrementiert die übergebene Ganzzahl. 
 
