@@ -3,8 +3,11 @@ public class prim
     public static void main(String[] s) throws Exception
     {
     	System.out.println("There will be code");
-    }
+    	//int a = EA.einInt();
+    	//int b = EA.einInt();
+    	//System.out.println(dek(a));
 
+    }
 
 //dekrementiert die übergebene Ganzzahl. 
 
@@ -15,11 +18,20 @@ public class prim
 //sagt, ob die zweite übergebene Ganzzahl ein Vielfaches der ersten übergebenen Ganzzahl ist.
 
     public boolean vielfach(int a, int b){
-    	int div = b / a;
-    	double divd = b / a;
-    	double divi = divd;
+    	if(a == 0 || a == 0){
+    		return false;
+    	}
 
-    	return true;
+    	int div = b / a;
+    	double divd = (double)b / (double)a;
+    	double divi = (double)div;
+
+    	if(divd == divi) {
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
     }
 
 //wirft alle Ganzzahlen, die die übergebene Bedingung erfüllen, aus der Liste hinaus.
