@@ -5,8 +5,8 @@ public class Prim
 	public static void main(String[] s) throws Exception{
 		int g = 0;
 		try{
-			g = new Integer(Integer.parseInt(s[0]));
 			arguments(s);
+			g = new Integer(Integer.parseInt(s[0]));
 		}
 		catch(java.lang.ArrayIndexOutOfBoundsException e){
 			System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
@@ -160,7 +160,7 @@ public class Prim
 
 	public static boolean multcomp(String[] s, String[] r){
 		int i = 0;
-		while(i < s.length){
+		while(i <= s.length){
 			if(Arrays.asList(s).contains(r[i])){
 				return true;
 			}
