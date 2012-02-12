@@ -142,6 +142,8 @@ public class Prim
 		return prims(IntListenSteuerung.liste(i));
 	}
 
+	//Uninteressant: Hilfe
+
 	public static void printHelp(){
 		System.out.println("Usage: java -jar 'Primzahlen.jar' [<Obere Grenze>] <command>\n");
 		System.out.println("The commands are:");
@@ -166,5 +168,4 @@ public class Prim
 		}
 		return false;
 	}
-
 }
