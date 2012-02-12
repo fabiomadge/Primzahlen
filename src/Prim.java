@@ -12,20 +12,19 @@ public class Prim
 		}
 		catch(java.lang.NumberFormatException e){
 			System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
-			System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+			System.out.print("Bitte geben sie eine Zahl >1 ein: ");
 			g = ein();
 		}
-		while(g < 0){
+		while(g < 2){
 			System.out.println("Die eingegebene Nummer ist leider nicht gültig.");
-			System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+			System.out.print("Bitte geben sie eine Zahl >1 ein: ");
 			g = ein();
 		}
 		new Prim(g);
-
 	}
 
 	public Prim(int i){
-		System.out.println(dek(i));
+		System.out.println(primzahlen(i));
 	}
 
 	//handeld schlechten input
@@ -36,7 +35,7 @@ public class Prim
 		}
 		catch(java.lang.NumberFormatException e){
 			System.out.println("Das ist zwar ganz schön, aber wir brauchen eine Zahl.");
-			System.out.print("Bitte geben sie eine Zahl >0 ein: ");
+			System.out.print("Bitte geben sie eine Zahl >1 ein: ");
 			return ein();
 		}
 	}
@@ -69,7 +68,22 @@ public class Prim
 	//wirft alle Ganzzahlen, die die übergebene Bedingung erfüllen, aus der Liste hinaus.
 
 	public IntListe werfen(int i, IntListe is){
-		return is;
+		if(is.istLeer() == true){
+			return is;
+		}
+		else{
+			IntListe ret = new IntListe();
+			while(is.istLeer() != false){
+				if(vielfach(i, is.ende())){
+					IntListenSteuerung.loeschen(is.ende(), is);
+				}
+				else{
+					IntListenSteuerung.anfuegen(is.ende(), ret);
+					IntListenSteuerung.loeschen(is.ende(), is);
+				}
+			}
+			return ret;
+		}
 	}
 
 	/*
@@ -79,19 +93,50 @@ public class Prim
 	*/
 
 	public IntListe sieb(IntListe is){
-		return is;
+		if(is.istLeer() == true){
+			return is;
+		}
+		else{
+			int k = is.kopf();
+			is = werfen(k, is);
+			return IntListenSteuerung.anfuegen(k, is);
+		}
 	}
 
 	//Sieb des Eratosthenes.
 
 	public IntListe prims(IntListe is){
-		return is;
+		if(is.istLeer() == true){
+			return is;
+		}
+		else{
+			is = sieb(is);
+			int i = 2;
+			IntListe tmp = new IntListe();
+			while(i > is.ende()){
+				if(i == is.kopf()){
+					sieb(is);
+					IntListenSteuerung.anfuegen(is.kopf(), tmp);
+					IntListenSteuerung.loeschen(is.kopf(), is);
+				}
+				else{
+					werfen(i, is);
+				}
+				i++;
+			}
+			IntListe ret = new IntListe();
+			while(tmp.istLeer() != false){
+				IntListenSteuerung.anfuegen(tmp.kopf(), ret);
+				IntListenSteuerung.loeschen(tmp.kopf(), tmp);
+			}
+			return ret;
+		}
 	}
 
 	//gibt eine Liste mit allen Primzahlen bis zur übergebenen
 
 	public IntListe primzahlen(int i){
-		return new IntListe();
+		return prims(IntListenSteuerung.liste(i));
 	}
 
 }

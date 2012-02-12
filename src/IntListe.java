@@ -1,5 +1,6 @@
 public class IntListe
 {
+	private IntListe is;
 
 	//String-Darstellung einer IntListe.
 	public String toString(){
@@ -7,27 +8,27 @@ public class IntListe
 	}
 
 	//sagt, ob die Liste leer ist.
-	public Boolean istLeer(IntListe is){
+	public Boolean istLeer(){
 		return false;
 	}
 
 	//gibt das vorderste Listenelement zurück.
-	public int kopf(IntListe is){
+	public int kopf(){
 		return -1;
 	}
 
 	//gibt den Rest der Liste ohne das vorderste Element zurück.
-	public IntListe rest(IntListe is){
+	public IntListe rest(){
 		return is;
 	}
 
 	//gibt den Anfang der Liste ohne das hinterste Element zurück.
-	public IntListe anfang(IntListe is){
+	public IntListe anfang(){
 		return is;
 	}
 
 	//gibt das hinterste Listenelement zurück.
-	public int ende(IntListe is){
+	public int ende(){
 		return -1;
 	}
 }
