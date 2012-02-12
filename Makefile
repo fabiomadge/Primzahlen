@@ -1,6 +1,6 @@
-all: prim
+all: build
 
-prim:
+build:
 	javac src/*.java
 	cd src; jar cfe Primzahlen.jar Prim *.class; mv Primzahlen.jar ..
 	@echo 'Fertig!'
