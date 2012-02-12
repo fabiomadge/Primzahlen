@@ -1,9 +1,12 @@
+import java.util.Arrays;
+
 public class Prim
 {
 	public static void main(String[] s) throws Exception{
 		int g = 0;
 		try{
 			g = new Integer(Integer.parseInt(s[0]));
+			arguments(s);
 		}
 		catch(java.lang.ArrayIndexOutOfBoundsException e){
 			System.out.println("Wenn sie ein paar Primzahlen wollen, dann sind sie hier genau richtig.");
@@ -137,6 +140,31 @@ public class Prim
 
 	public IntListe primzahlen(int i){
 		return prims(IntListenSteuerung.liste(i));
+	}
+
+	public static void printHelp(){
+		System.out.println("Usage: java -jar 'Primzahlen.jar' [<Obere Grenze>] <command>\n");
+		System.out.println("The commands are:");
+		System.out.println("	help    Prints this help.\n");
+	}
+
+	public static void arguments(String[] s){
+		String[] help = {"-h", "--help", "help"};
+		if(multcomp(s, help)){
+			printHelp();
+			System.exit(0);
+		}
+	}
+
+	public static boolean multcomp(String[] s, String[] r){
+		int i = 0;
+		while(i < s.length){
+			if(Arrays.asList(s).contains(r[i])){
+				return true;
+			}
+			i++;
+		}
+		return false;
 	}
 
 }
