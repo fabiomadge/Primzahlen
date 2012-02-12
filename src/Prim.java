@@ -53,7 +53,7 @@ public class Prim
 			return false;
 		}
 
-		int div = b / a;
+		int div     = b / a;
 		double divd = (double)b / (double)a;
 		double divi = (double)div;
 
@@ -98,7 +98,7 @@ public class Prim
 		}
 		else{
 			int k = is.kopf();
-			is = werfen(k, is);
+			is    = werfen(k, is);
 			return IntListenSteuerung.anfuegen(k, is);
 		}
 	}
@@ -110,8 +110,8 @@ public class Prim
 			return is;
 		}
 		else{
-			is = sieb(is);
-			int i = 2;
+			is           = sieb(is);
+			int i        = 2;
 			IntListe tmp = new IntListe();
 			while(i > is.ende()){
 				if(i == is.kopf()){
