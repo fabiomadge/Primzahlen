@@ -43,7 +43,12 @@ public class Prim
 		}
 	}
 
-	//dekrementiert die übergebene Ganzzahl. 
+	//dekrementiert die Eingabe
+
+	/*
+	Vorraussetzung:	keine
+	Effekt:         Der als Argumemt übergebene int-Wert wird um 1 verringert zurückgegben.
+	*/
 
 	public int dek(int i){
 		return --i;
@@ -51,8 +56,13 @@ public class Prim
 
 	//sagt, ob die zweite übergebene Ganzzahl ein Vielfaches der ersten übergebenen Ganzzahl ist.
 
+	/*
+	Vorraussetzung:	
+	Effekt:         
+	*/
+
 	public boolean vielfach(int a, int b){
-		if(a == 0 || a == 0){
+		if(a == 0 || b == 0){
 			return false;
 		}
 
@@ -69,6 +79,11 @@ public class Prim
 	}
 
 	//wirft alle Ganzzahlen, die die übergebene Bedingung erfüllen, aus der Liste hinaus.
+
+	/*
+	Vorraussetzung:	
+	Effekt:         
+	*/
 
 	public IntListe werfen(int i, IntListe is){
 		if(is.istLeer() == true){
@@ -95,6 +110,11 @@ public class Prim
 	des vordersten Elements sind, in die zurück gegebene Ergebnis-Liste übernommen.
 	*/
 
+	/*
+	Vorraussetzung:	
+	Effekt:         
+	*/
+
 	public IntListe sieb(IntListe is){
 		if(is.istLeer() == true){
 			return is;
@@ -107,6 +127,11 @@ public class Prim
 	}
 
 	//Sieb des Eratosthenes.
+
+	/*
+	Vorraussetzung:	
+	Effekt:         
+	*/
 
 	public IntListe prims(IntListe is){
 		if(is.istLeer() == true){
@@ -137,6 +162,11 @@ public class Prim
 	}
 
 	//gibt eine Liste mit allen Primzahlen bis zur übergebenen
+
+	/*
+	Vorraussetzung:	
+	Effekt:         
+	*/
 
 	public IntListe primzahlen(int i){
 		return prims(IntListenSteuerung.liste(i));
